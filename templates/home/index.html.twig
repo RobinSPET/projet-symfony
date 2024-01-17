@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+
+<h1>Bienvenue chez {{ siteName }}</h1>
+
+<div class="w-full h-64" id="accueil">
+    <button id="prev" class=""><img url="/img/32213.png" class=""/></button>
+    <img url={{ url }} id="img" alt="img"/>
+    <button id="next" class=""></button>
+</div>
+<div class="mx-96 bg-pure-white">
+    <div class="row" id="new">
+        {% for newProd in newProds %}
+            <div class="bg-white">
+                <img class="" url={{ newProd.url }} alt="img"/>
+                <button class="" id="add" type="button">Add</button>
+                <button class="" id="detail" type="button">Détail</button>
+            </div>
+        {% endfor %}
+    </div> 
+    <h3 class=""> Qui sommes-nous? </h3> 
+    <div class="bg-lightgrey rounded-lg p-8 border-[1px]">
+        
+        <p class="text-center">
+            Bienvenue chez CyberShop, l'avenir du shopping en ligne ! <br>
+            Chez CyberShop, nous repoussons les limites de l'imagination en vous offrant une expérience d'achat futuriste comme nulle part ailleurs. <br>
+            Notre mission est de vous connecter avec les produits les plus innovants et captivants du futur, allant des vaisseaux spatiaux aux sabres laser.<br>
+            Explorez notre vaste catalogue de produits high-tech qui transcendent les frontières du possible. <br>
+            Parcourez des vaisseaux spatiaux ultramodernes, prêts à vous emmener vers des aventures intergalactiques inoubliables. <br>
+            Plongez-vous dans l'univers des sabres laser, des armes élégantes et puissantes qui évoquent la magie et la technologie avancée.<br>
+            Chez CyberShop, chaque produit est sélectionné avec soin pour son design innovant, sa qualité exceptionnelle et son potentiel à inspirer votre passion pour le futur. <br>
+            Notre équipe dévouée travaille sans relâche pour vous offrir une expérience d'achat sécurisée et sans tracas.<br>
+            L'avenir est entre vos mains, et chez CyberShop, nous sommes là pour le rendre tangible. <br>
+            Explorez notre univers de produits futuristes dès aujourd'hui et préparez-vous à vivre une expérience de shopping en ligne comme jamais auparavant. <br>
+            Bienvenue dans le futur de l'achat en ligne. Bienvenue chez CyberShop.
+        </p>
+    </div>
+</div>
+{% endblock %}
