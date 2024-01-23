@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link href="{{ asset("dist/output.css")}}" rel="stylesheet">
+        <link href="dist/output.css" rel="stylesheet">
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
@@ -14,7 +14,22 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
+
     <body>
+        <header class="bg-gray-800 text-white py-4">
+            <div class="container mx-auto text-center">
+                <h1 class="text-3xl font-bold">Bienvenu chez {{siteName}}</h1>
+            </div>
+        </header>
+
+        <nav class="bg-gray-900 text-white p-4">
+            <div class="container mx-auto flex justify-between">
+                <a href="/" class="hover:bg-gray-700 px-4 py-2 rounded">Accueil</a>
+                <a href="/Products" class="hover:bg-gray-700 px-4 py-2 rounded">Produits</a>
+                <a href="/Panier" class="hover:bg-gray-700 px-4 py-2 rounded">Panier</a>
+                <a href="/Connect" class="hover:bg-gray-700 px-4 py-2 rounded">Connexion</a>
+            </div>
+        </nav>
         {% block body %}{% endblock %}
     </body>
 </html>
