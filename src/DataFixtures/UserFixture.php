@@ -36,7 +36,7 @@ class UserFixture extends Fixture
             $account->setEmail($user['email']);
             $account->setPassword($user['password']);
             $account->setAdresse($user['adresse']);
-
+            $this->addReference("User_".($key+1), $account);
             $manager->persist($account);
         }
 

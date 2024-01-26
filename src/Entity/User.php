@@ -6,15 +6,15 @@ use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-class User
+class User implements UserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
-
     #[ORM\Column(length: 255)]
     private ?string $pseudo = null;
 
@@ -37,6 +37,29 @@ class User
     public function __construct()
     {
         $this->orders = new ArrayCollection();
+    }
+
+    public function getRoles() : array
+    {
+        return ['ROLE_USER'];
+    }
+
+    public function getUsername()
+    {
+        return $this->pseudo;
+    }
+
+    public function getSalt()
+    {
+        return null;
+    }
+
+    public function eraseCredentials()
+    {}
+
+    public function getUserIdentifier(): string
+    {
+        return $this->login;
     }
 
     public function getId(): ?int
