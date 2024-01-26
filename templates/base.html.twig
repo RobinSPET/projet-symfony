@@ -27,7 +27,13 @@
                 <a href="/" class="hover:bg-gray-700 px-4 py-2 rounded">Accueil</a>
                 <a href="/Products" class="hover:bg-gray-700 px-4 py-2 rounded">Produits</a>
                 <a href="/Panier" class="hover:bg-gray-700 px-4 py-2 rounded">Panier</a>
-                <a href="/Login" class="hover:bg-gray-700 px-4 py-2 rounded">Connexion</a>
+                {% if app.user %}
+                    <a href="/user" class="hover:bg-gray-700 px-4 py-2 rounded">Mon profil</a>
+                    <a href="/logout" class="hover:bg-gray-700 px-4 py-2 rounded">Déconnexion</a>
+                {% else %}
+                    <a href="/login" class="hover:bg-gray-700 px-4 py-2 rounded">Connexion</a>
+                    <a href="/register" class="hover:bg-gray-700 px-4 py-2 rounded">Inscription</a>
+                {% endif %}
             </div>
         </nav>
         {% block body %}{% endblock %}

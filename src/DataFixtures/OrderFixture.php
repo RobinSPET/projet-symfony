@@ -3,8 +3,9 @@
 namespace App\DataFixtures;
 
 use App\Entity\Product;
-use App\DataFixture\ProductFixture;
-use App\DataFixture\UserFixture;
+use App\Entity\Order;
+use App\DataFixtures\ProductFixture;
+use App\DataFixtures\UserFixture;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
@@ -87,7 +88,7 @@ class OrderFixture extends Fixture implements DependentFixtureInterface
             $ord->setDateOrder($order[3]);
             $order[1]->addOrder($ord);
             $manager->persist($ord);
-            $this->addReference("Order_".key+1, $ord);
+            $this->addReference("Order_".($key+1), $ord);
         }
 
         $manager->flush();

@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Categorie;
+use App\DataFixtures\UserFixture;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -22,7 +23,7 @@ class CategorieFixture extends Fixture
             'Vestes',
             'Jeans',
             'Pantalons',
-            'Joggins',
+            'Joggings',
             'Chaussures',
             'Chaussettes',
             'Sous-vêtements'

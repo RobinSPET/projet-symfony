@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -13,6 +14,7 @@ class DetailProductController extends AbstractController
     {
         return $this->render('detail_product/index.html.twig', [
             'controller_name' => 'DetailProductController',
+            'session' => $session
         ]);
     }
 }

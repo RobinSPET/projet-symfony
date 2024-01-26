@@ -4,9 +4,7 @@
 
 {% block body %}
 <form method="post" class="mx-80 bg-gray-200">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+    
 
     {% if app.user %}
         <div class="mb-3">
@@ -14,11 +12,11 @@
         </div>
     {% endif %}
 
-    <div class="flex flex-col justify-content justify-center">
-        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <div class="flex flex-col p-4 justify-content justify-center">
+        <h1 class="h3 mb-3 font-weight-normal">Entrez vos identifiants</h1>
         <label for="inputPseudo" class="w-2/5">Pseudo</label>
         <input type="text" value="{{ last_username }}" name="pseudo" id="inputPseudo" class="form-control w-2/5 my-4 bg-white border-b-[1px] border-black hover:border-b-2" autocomplete="pseudo" required autofocus>
-        <label for="inputPassword" class="w-2/5">Password</label>
+        <label for="inputPassword" class="w-2/5">Mot de passe</label>
         <input type="password" name="password" id="inputPassword" class="form-control w-2/5 my-2 bg-white border-b-[1px] border-black hover:border-b-2" autocomplete="current-password" required>
 
         <input type="hidden" name="_csrf_token"
@@ -28,6 +26,10 @@
         <button class="btn btn-lg btn-primary text-white my-2 w-40 h-18 bg-black rounded-full p-2" type="submit">
             Sign in
         </button>
+
+        {% if error %}
+            <div class="text-red-500">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
     </div>
     
 </form>

@@ -3,8 +3,8 @@
 namespace App\DataFixtures;
 
 use App\Entity\Panier;
-use App\DataFixture\ProductFixture;
-use App\DataFixture\UserFixture;
+use App\DataFixtures\ProductFixture;
+use App\DataFixtures\UserFixture;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
@@ -51,7 +51,7 @@ class PanierFixture extends Fixture implements DependentFixtureInterface
             $pan->setUser($panier[1]);
             $panier[1]->setPanier($pan);
             $manager->persist($pan);
-            $this->addReference("Panier_".key+1, $pan);
+            $this->addReference("Panier_".($key+1), $pan);
         }
 
         $manager->flush();

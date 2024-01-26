@@ -3,13 +3,13 @@
 namespace App\DataFixtures;
 
 use App\Entity\Product;
-use App\DataFixture\CategorieFixture;
-use App\DataFixture\ImageFixture;
+use App\DataFixtures\CategorieFixture;
+use App\DataFixtures\ImageFixture;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
-class ProductFixture extends Fixture implements DependentFixtureInterface
+class ProductFixture extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
@@ -305,20 +305,12 @@ class ProductFixture extends Fixture implements DependentFixtureInterface
             $product->setCategorie($prod['category']);
             $product->addImage($prod['images']);
             $prod['category']->addAttachedProduct($product);
-            $prod['images']->addAttachedProduct($product);
+            $prod['images']->setAttachedProduct($product);
             $manager->persist($product);
-            $this->addReference("Product_".key+1, $product);
+            $this->addReference("Product_".($key+1), $product);
         }
         
 
         $manager->flush();
-    }
-
-    public function getDependencies()
-    {
-        return [
-            CategorieFixture::class,
-            ImageFixture::class
-        ];
     }
 }
