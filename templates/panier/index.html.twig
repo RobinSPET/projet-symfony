@@ -1,20 +1,36 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PanierController!{% endblock %}
+{% block title %}Panier{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/robins/Library/CloudStorage/OneDrive-Personnel/Documents/projet-symfony/src/Controller/PanierController.php'|file_link(0) }}">src/Controller/PanierController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/robins/Library/CloudStorage/OneDrive-Personnel/Documents/projet-symfony/templates/panier/index.html.twig'|file_link(0) }}">templates/panier/index.html.twig</a></code></li>
-    </ul>
+<div class="flex flex-col bg-slate-300 mx-auto w-96">
+    {% for product in products %}
+        <div class="flex flex-row">
+            <div class="border-[1px] border-black w-1/3 p-4 flex justify-center items-center">{{product.titre}}</div>
+            <div class="border-[1px] border-black w-1/3 p-4 flex justify-center items-center">{{product.prix}}</div>
+            <div class="border-[1px] border-black w-1/3 flex justify-center items-center"><button class="bg-red-600 w-[90%] h-[90%] text-white border-0 rounded-lg">Supprimer</button></div>
+        </div>
+    {% endfor %}
 </div>
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        let buttons = document.querySelectorAll('button');
+
+        buttons.forEach((button) => {
+            button.addEventListener('click', (e) => {
+                let value = button.value;
+                let tmp = new XMLHttpRequest();
+                tmp.open('POST', '/addCart/'+value, true);
+                tmp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                tmp.onReadyStatechange = () => {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        console.log(xhr.responseText);
+                    }
+                };
+                tmp.send()
+            })
+        })
+    })
+</script>
 {% endblock %}

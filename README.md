@@ -9,6 +9,9 @@ lancer les commandes suivantes :
 
 ```npm i``` et ```composer i```
 
+compiler tailwindcss avec :
+```npx tailwindcss -o ./src/output.css --watch```
+
 j'utilise personnellement le serveur de base de symfony (lancé avec ```symfony server:start```)
 si vous avez un serveur tel que wamp ou mamp, mettre les fichiers dans le dossier www et faire pointer le virtual host sur "/public"
 
