@@ -1,4 +1,4 @@
-## Projet Symfony
+## Projet Symfony - Site d'E-Commerce
 
 ## Installer le projet
 avoir symfony d'installé, php 8, composer et npm
@@ -22,6 +22,7 @@ si vous avez un serveur tel que wamp ou mamp, mettre les fichiers dans le dossie
 - controlleurs + templates
 - hash des mots de passes
 - mise en place d'un système de traductions
+- panneau de modification de l'utilisateur connecté
 
 ## lien Youtube de la vidéo
 Pour regarder la vidéo de présentation, merci d'utiliser le lien suivant :

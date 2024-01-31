@@ -1,7 +1,3 @@
 controllers:
     resource: ../src/Controller/
     type: attribute
-
-addCart:
-    path: /addCart/{id}
-    controller: App\Controller\CartController::addCart

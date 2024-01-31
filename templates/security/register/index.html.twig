@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Modifier l'utilisateur{% endblock %}
+{% block title %}Hello RegisterController!{% endblock %}
 
 {% block body %}
     {{ form_start(form) }}
@@ -10,12 +10,12 @@
     
         <div class="flex flex-col justify-center items-center bg-gray-400 mx-96 p-8">
             <div class="flex-row p-4">
-                <div class="m-2"><label>Email : </label>{{ form_row(form.email) }}</div>
-                <div class="m-2"><label>Adresse : </label>{{ form_row(form.adresse) }}</div>
+                <div class="m-2"><label>{{'register.email'|trans}} : </label>{{ form_row(form.email) }}</div>
+                <div class="m-2"><label>{{'register.address'|trans}} : </label>{{ form_row(form.adresse) }}</div>
             </div>
             <div class="flex-row p-4" id="some-custom-id">
-                <div class="m-2"><label>Nom d'utilisateur : </label>{{ form_row(form.username) }}</div>
-                <div class="m-2"><label>Mot de passe : </label>{{ form_row(form.password) }}</div>
+                <div class="m-2"><label>{{'register.username'|trans}} : </label>{{ form_row(form.username) }}</div>
+                <div class="m-2"><label>{{'register.password'|trans}} : </label>{{ form_row(form.password) }}</div>
             </div>
             <div class="bg-black rounded-full w-44 h-14 m-5 flex justify-center"{{ form_row(form.Valider) }}
         </div>
