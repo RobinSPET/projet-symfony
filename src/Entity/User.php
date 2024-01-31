@@ -7,16 +7,17 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-class User implements UserInterface
+class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
     #[ORM\Column(length: 255)]
-    private ?string $pseudo = null;
+    private ?string $username = null;
 
     #[ORM\Column(length: 255)]
     private ?string $password = null;
@@ -26,6 +27,9 @@ class User implements UserInterface
 
     #[ORM\Column(length: 255)]
     private ?string $adresse = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private?string $login = null;
 
     #[ORM\OneToOne(inversedBy: 'user', cascade: ['persist', 'remove'])]
     private ?Panier $panier = null;
@@ -46,7 +50,7 @@ class User implements UserInterface
 
     public function getUsername()
     {
-        return $this->pseudo;
+        return $this->username;
     }
 
     public function getSalt()
@@ -59,7 +63,7 @@ class User implements UserInterface
 
     public function getUserIdentifier(): string
     {
-        return $this->login;
+        return $this->username;
     }
 
     public function getId(): ?int
@@ -67,14 +71,9 @@ class User implements UserInterface
         return $this->id;
     }
 
-    public function getPseudo(): ?string
+    public function setUsername(string $pseudo): static
     {
-        return $this->pseudo;
-    }
-
-    public function setPseudo(string $pseudo): static
-    {
-        $this->pseudo = $pseudo;
+        $this->username = $pseudo;
 
         return $this;
     }

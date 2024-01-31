@@ -43,10 +43,10 @@ class ImageFixture extends Fixture
             '/img/jordan4Red.jpeg',
             '/img/chaussetteNoir.jpeg',
             '/img/chaussettesBlancNike.jpeg',
-            '/img/chaussetteNoirNike.jpeg',
+            '/img/chaussettesNoirNike.jpeg',
             '/img/caleconblanc.jpeg',
             '/img/caleconsCalvin.jpeg',
-            '/img/caleconsAmericains.jpeg',
+            '/img/caleçonsAmericains.jpeg',
         ];
         foreach ($urls as $key => $url) { // pour chaque catégorie
             $image = new Images();

@@ -19,7 +19,7 @@ class RegisterType extends AbstractType
                 'label'=>' '
             ])
             ->add('adresse', TextType::class, ['label'=>' '])
-            ->add('pseudo', TextType::class, ['label'=>' '])
+            ->add('username', TextType::class, ['label'=>' '])
             ->add('password', PasswordType::class, ['label'=>' '])
             ->add('Valider', SubmitType::class, ['label'=>'Valider', 'attr' => ['class'=>'text-white']])
         ;

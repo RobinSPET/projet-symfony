@@ -4,22 +4,16 @@
 
 {% block body %}
 
-<div class="w-full h-64" id="accueil">
-    <button id="prev" class=""><img url="/img/32213.png" class=""/></button>
-    <img url={{ url }} id="img" alt="img"/>
-    <button id="next" class=""></button>
-</div>
 <div class="mx-96 bg-pure-white">
-    <div class="row" id="new">
+    <div class="flex flex-row" id="new">
         {% for newProd in newProds %}
-            <div class="bg-white">
-                <img class="" url={{ newProd.url }} alt="img"/>
-                <button class="" id="add" type="button">Add</button>
-                <button class="" id="detail" type="button">Détail</button>
+            <div class="bg-slate-300 w-1/5 h-auto rounded-lg border-0 p-4 m-4">
+                {% for img in newProd.getImage() %}<img class="" src={{ img.url }} alt="img"/>{% endfor %}
+                <h1>{{newProd.titre}}</h1>
             </div>
         {% endfor %}
     </div> 
-    <h3 class="text-3xl text-gray-800 text-center mx-72 mb-4 pb-2 border-b-2 border-gray-800"> {{ 'welcome.whoarewe'|trans }} </h3> 
+    <h3 class="text-3xl text-gray-800 text-center mx-72 mb-4 pb-2 border-b-2 border-gray-800"> {{ 'welcome.whoarewe'| trans }} </h3> 
     <div class="bg-gray-900 rounded-lg p-8 border-[1px]">
         
         <p class="text-justify text-white">

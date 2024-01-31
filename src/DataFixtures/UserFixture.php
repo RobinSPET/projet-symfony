@@ -14,26 +14,26 @@ class UserFixture extends Fixture
             [
                 'username' => 'user1',
                 'email' => 'user1@localhost.haha',
-                'password' => '12345678',
+                'password' => '$2y$13$GUYrSnZAA1cPrzHFfOV3xOD7CpaCccSAEHzsTzNQtMHUMHd4GVDs.',
                 'adresse' => '1 rue des cornichons, 57000, Metz',
             ],
             [
                 'username' => 'user2',
                 'email' => 'user2@localhost.haha',
-                'password' => '12345678',
+                'password' => '$2y$13$GUYrSnZAA1cPrzHFfOV3xOD7CpaCccSAEHzsTzNQtMHUMHd4GVDs.',
                 'adresse' => '1 rue des cornichons, 57000, Metz',
             ],
             [
                 'username' => 'user3',
                 'email' => 'user3@localhost.haha',
-                'password' => '12345678',
+                'password' => '$2y$13$GUYrSnZAA1cPrzHFfOV3xOD7CpaCccSAEHzsTzNQtMHUMHd4GVDs.',
                 'adresse' => '1 rue des cornichons, 57000, Metz',
             ]
         ];
 
         foreach ($users as $key => $user) { // pour chaque catégorie
             $account = new User();
-            $account->setPseudo($user['username']);
+            $account->setUsername($user['username']);
             $account->setEmail($user['email']);
             $account->setPassword($user['password']);
             $account->setAdresse($user['adresse']);

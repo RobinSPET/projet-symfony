@@ -2,23 +2,17 @@
 
 namespace App\Controller;
 
-use App\Entity\User;
-use App\Form\RegisterType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Request;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
-class RegisterController extends AbstractController
+class UserController extends AbstractController
 {
-    #[Route('/register', name: 'app_register')]
-    public function index(Request $request, EntityManagerInterface $entityManager, UserPasswordHasherInterface $passwordHasher): Response
+    #[Route('/user', name: 'app_user')]
+    public function index(): Response
     {
         $user = new User();
-        $form = $this->createForm(RegisterType::class, $user);
+        $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             if (!$entityManager->getRepository(User::class)->findOneBy(['username' => $user->getUsername()])){
@@ -30,7 +24,7 @@ class RegisterController extends AbstractController
             }
             
         }
-        return $this->render('register/index.html.twig', [
+        return $this->render('user/index.html.twig', [
             'form' => $form->createView(),
         ]);
     }

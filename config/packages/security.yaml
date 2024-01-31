@@ -1,22 +1,34 @@
 security:
+
     # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
     password_hashers:
-        Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
+        App\Entity\User: 'auto'
+        # Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface:
+        #     algorithm: 'auto'
+        #     cost: 15
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
     providers:
         users_in_memory: { memory: null }
         app_user_provider:
             entity:
                 class: App\Entity\User
-                property: login
+                property: username
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
             lazy: true
-            provider: users_in_memory
+            provider: app_user_provider
             custom_authenticator: App\Security\LoginAuthAuthenticator
+            form_login:
+                login_path: /login
+                check_path: /login           
+                username_parameter: username
+                password_parameter: password
+            
+            entry_point: App\Security\LoginAuthAuthenticator
+
             logout:
                 path: app_logout
                 # where to redirect after logout
