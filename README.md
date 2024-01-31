@@ -21,6 +21,7 @@ si vous avez un serveur tel que wamp ou mamp, mettre les fichiers dans le dossie
 - affichage des produits dans le panier de l'utilisateur
 - controlleurs + templates
 - hash des mots de passes
+- mise en place d'un système de traductions
 
 ## lien Youtube de la vidéo
 Pour regarder la vidéo de présentation, merci d'utiliser le lien suivant :
