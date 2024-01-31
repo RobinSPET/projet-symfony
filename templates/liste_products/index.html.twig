@@ -1,20 +1,44 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ListeProductsController!{% endblock %}
+{% block title %}Liste des produits{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<div class="mx-auto flex flex-col justify-center items-center bg-slate-50 w-1/2">
+    
+    <div class="border-b-[1px] border-black p-2">
+        <h1>Liste des produits</h1>
+    </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/robins/Library/CloudStorage/OneDrive-Personnel/Documents/projet-symfony/src/Controller/ListeProductsController.php'|file_link(0) }}">src/Controller/ListeProductsController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/robins/Library/CloudStorage/OneDrive-Personnel/Documents/projet-symfony/templates/liste_products/index.html.twig'|file_link(0) }}">templates/liste_products/index.html.twig</a></code></li>
-    </ul>
+    <div class="flex flex-wrap flex-row w-[100%] justify-center items-center">
+        {% for product in products %}
+            <div class="border-[1px] border-zinc-500 p-4 rounded-lg bg-zinc-300 w-1/4 m-4">
+                {% for image in product.getImage() %}{% if product.getImage() %} <img src={{ image.getUrl() }} class="w-auto h-52" alt="product img"/>{% endif %} {% endfor %}
+                <h2>{{ product.getTitre() }}</h2>
+                <p>{{ product.getPrix() }} €<p>
+                <button type="button" value={{product.id}} class="bg-green-500 p-2 rounded-lg text-white">Add</button>
+            </div>
+        {% endfor %}
+    </div>
 </div>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        let buttons = document.querySelectorAll('button');
+
+        buttons.forEach((button) => {
+            button.addEventListener('click', (e) => {
+                let value = button.value;
+                let tmp = new XMLHttpRequest();
+                tmp.open('POST', '/addCart/'+value, true);
+                tmp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                tmp.onReadyStatechange = () => {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        console.log(xhr.responseText);
+                    }
+                };
+                tmp.send()
+            })
+        })
+    })
+</script>
 {% endblock %}

@@ -7,13 +7,13 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class ProductsController extends AbstractController
+class LoginController extends AbstractController
 {
-    #[Route('/products', name: 'app_products')]
+    #[Route('/login', name: 'app_login')]
     public function index(SessionInterface $session): Response
     {
-        return $this->render('products/index.html.twig', [
-            'controller_name' => 'ProductsController',
+        return $this->render('login/index.html.twig', [
+            'controller_name' => 'LoginController',
             'session' => $session
         ]);
     }
