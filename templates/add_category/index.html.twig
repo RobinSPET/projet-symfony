@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AddCategoryController!{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+        <div class="my-custom-class-for-errors">
+            {{ form_errors(form) }}
+        </div>
+    
+        <div class="flex flex-col justify-center items-center bg-gray-400 mx-96 p-8">
+            <div class="flex-row p-4">
+                <div class="m-2"><label>Nom : </label>{{ form_row(form.nom) }}</div>
+            </div>
+            <div class="bg-black rounded-full w-44 h-14 m-5 flex justify-center">{{ form_row(form.Valider) }}</div>
+        </div>
+    {{ form_end(form) }}
+{% endblock %}

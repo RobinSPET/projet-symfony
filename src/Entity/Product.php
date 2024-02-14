@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\Images;
 use App\Repository\ProductRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -29,12 +30,17 @@ class Product
     #[ORM\JoinColumn(nullable: false)]
     private ?Categorie $categorie = null;
 
-    #[ORM\OneToMany(mappedBy: 'attachedProduct', targetEntity: Images::class)]
-    private Collection $image;
+    #[ORM\OneToOne(inversedBy: 'product', cascade: ['persist', 'remove'])]
+    private ?Images $image = null;
 
     public function __construct()
     {
-        $this->image = new ArrayCollection();
+        $this->image = new Images();
+    }
+
+    public function __toString()
+    {
+        return $this->titre; // Supposons que "nom" est un champ de votre classe Categorie
     }
 
     public function getId(): ?int
@@ -90,33 +96,16 @@ class Product
         return $this;
     }
 
-    /**
-     * @return Collection<int, Images>
-     */
-    public function getImage(): Collection
+    public function getImage(): ?Images
     {
         return $this->image;
     }
 
-    public function addImage(Images $image): static
+    public function setImage(?Images $image): static
     {
-        if (!$this->image->contains($image)) {
-            $this->image->add($image);
-            $image->setAttachedProduct($this);
-        }
+        $this->image = $image;
 
         return $this;
     }
 
-    public function removeImage(Images $image): static
-    {
-        if ($this->image->removeElement($image)) {
-            // set the owning side to null (unless already changed)
-            if ($image->getAttachedProduct() === $this) {
-                $image->setAttachedProduct(null);
-            }
-        }
-
-        return $this;
-    }
 }

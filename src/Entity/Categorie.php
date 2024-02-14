@@ -26,6 +26,11 @@ class Categorie
         $this->attachedProducts = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->nom; // Supposons que "nom" est un champ de votre classe Categorie
+    }
+    
     public function getId(): ?int
     {
         return $this->id;

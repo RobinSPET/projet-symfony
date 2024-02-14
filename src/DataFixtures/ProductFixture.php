@@ -303,9 +303,9 @@ class ProductFixture extends Fixture
             $product->setDescription($prod['description']);
             $product->setPrix($prod['price']);
             $product->setCategorie($prod['category']);
-            $product->addImage($prod['images']);
+            $product->setImage($prod['images']);
             $prod['category']->addAttachedProduct($product);
-            $prod['images']->setAttachedProduct($product);
+            $prod['images']->setProduct($product);
             $manager->persist($product);
             $this->addReference("Product_".($key+1), $product);
         }

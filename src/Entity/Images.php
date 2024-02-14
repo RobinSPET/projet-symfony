@@ -16,9 +16,8 @@ class Images
     #[ORM\Column(length: 255)]
     private ?string $url = null;
 
-    #[ORM\ManyToOne(inversedBy: 'image')]
-    #[ORM\JoinColumn(nullable: true)]
-    private ?Product $attachedProduct = null;
+    #[ORM\OneToOne(mappedBy: 'image', cascade: ['persist', 'remove'])]
+    private ?Product $product = null;
 
     public function getId(): ?int
     {
@@ -37,14 +36,24 @@ class Images
         return $this;
     }
 
-    public function getAttachedProduct(): ?Product
+    public function getProduct(): ?Product
     {
-        return $this->attachedProduct;
+        return $this->product;
     }
 
-    public function setAttachedProduct(?Product $attachedProduct): static
+    public function setProduct(?Product $product): static
     {
-        $this->attachedProduct = $attachedProduct;
+        // unset the owning side of the relation if necessary
+        if ($product === null && $this->product !== null) {
+            $this->product->setImage(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($product !== null && $product->getImage() !== $this) {
+            $product->setImage($this);
+        }
+
+        $this->product = $product;
 
         return $this;
     }
