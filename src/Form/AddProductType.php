@@ -27,10 +27,10 @@ class AddProductType extends AbstractType
             ->add('prix', TextType::class, [
                 'label'=>' '
             ])
-            ->add('image', EntityType::class, [
-                'class' => Images::class,
-                'label'=>' '
-            ])
+            // ->add('image', EntityType::class, [
+            //     'class' => Images::class,
+            //     'label'=>' '
+            // ])
             ->add('categorie', EntityType::class, [
                 'class' => Categorie::class,
                 'label'=>' '

@@ -13,7 +13,7 @@
     <div class="flex flex-wrap w-[100%] justify-center items-center">
         {% for product in products %}
             <div class="border-[1px] border-zinc-500 p-4 rounded-lg bg-zinc-300 w-1/4 m-4">
-                {% for image in product.getImage() %}{% if product.getImage() %} <img src={{ image.getUrl() }} class="w-auto h-52" alt="product img"/>{% endif %} {% endfor %}
+                {# {% for image in product.getImage() %}{% if product.getImage() %} <img src={{ image.getUrl() }} class="w-auto h-52" alt="product img"/>{% endif %} {% endfor %} #}
                 <h2>{{ product.getTitre() }}</h2>
                 <p>{{ product.getPrix() }} €<p>
                 <button type="button" value={{product.id}} class="bg-green-500 p-2 rounded-lg text-white">Add</button>

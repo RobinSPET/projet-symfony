@@ -8,7 +8,7 @@
     <div class="flex flex-row" id="new">
         {% for newProd in newProds %}
             <div class="bg-slate-300 w-1/5 h-auto rounded-lg border-0 p-4 m-4">
-                {% for img in newProd.getImage() %}<img class="" src={{ img.url }} alt="img"/>{% endfor %}
+                {# {% for img in newProd.getImage() %}<img class="" src={{ img.url }} alt="img"/>{% endfor %} #}
                 <h1>{{newProd.titre}}</h1>
             </div>
         {% endfor %}

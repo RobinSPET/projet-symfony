@@ -30,8 +30,8 @@ class Product
     #[ORM\JoinColumn(nullable: false)]
     private ?Categorie $categorie = null;
 
-    #[ORM\OneToOne(inversedBy: 'product', cascade: ['persist', 'remove'])]
-    private ?Images $image = null;
+    // #[ORM\OneToOne(inversedBy: 'product', cascade: ['persist', 'remove'])]
+    // private ?Images $image = null;
 
     public function __construct()
     {
@@ -96,16 +96,16 @@ class Product
         return $this;
     }
 
-    public function getImage(): ?Images
-    {
-        return $this->image;
-    }
+    // public function getImage(): ?Images
+    // {
+    //     return $this->image;
+    // }
 
-    public function setImage(?Images $image): static
-    {
-        $this->image = $image;
+    // public function setImage(?Images $image): static
+    // {
+    //     $this->image = $image;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
 }

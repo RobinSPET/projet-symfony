@@ -17,7 +17,7 @@ class AddProductController extends AbstractController
     public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
         $product = new Product();
-        $image = $entityManager->getRepository(Images::class)->findAll(); 
+        // $image = $entityManager->getRepository(Images::class)->findAll(); 
 
         $form = $this->createForm(AddProductType::class, $product);
         $form->handleRequest($request);

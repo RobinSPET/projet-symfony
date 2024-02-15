@@ -19,56 +19,56 @@ class ProductFixture extends Fixture
                 'description' => 'T-shirt',
                 'price' => 10,
                 'category' => $this->getReference('T-shirts'),
-                'images' => $this->getReference('Image_1'),
+                // 'images' => $this->getReference('Image_1'),
             ],
             [
                 'name' => 'T-shirt',
                 'description' => 'T-shirt',
                 'price' => 10,
                 'category' => $this->getReference('T-shirts'),
-                'images' => $this->getReference('Image_2'),
+                // 'images' => $this->getReference('Image_2'),
             ],
             [
                 'name' => 'T-shirt',
                 'description' => 'T-shirt',
                 'price' => 10,
                 'category' => $this->getReference('T-shirts'),
-                'images' => $this->getReference('Image_3'),
+                // 'images' => $this->getReference('Image_3'),
             ],
             [
                 'name' => 'Pull',
                 'description' => 'Pull',
                 'price' => 10,
                 'category' => $this->getReference('Pulls'),
-                'images' => $this->getReference('Image_4'),
+                // 'images' => $this->getReference('Image_4'),
             ],
             [
                 'name' => 'Pull',
                 'description' => 'Pull',
                 'price' => 10,
                 'category' => $this->getReference('Pulls'),
-                'images' => $this->getReference('Image_5'),
+                // 'images' => $this->getReference('Image_5'),
             ],
             [
                 'name' => 'Pull',
                 'description' => 'Pull',
                 'price' => 10,
                 'category' => $this->getReference('Pulls'),
-                'images' => $this->getReference('Image_6'),
+                // 'images' => $this->getReference('Image_6'),
             ],
             [
                 'name' => 'Sous-pull',
                 'description' => 'Sous-pull',
                 'price' => 10,
                 'category' => $this->getReference('Sous-pulls'),
-                'images' => $this->getReference('Image_7'),
+                // 'images' => $this->getReference('Image_7'),
             ],
             [
                 'name' => 'Sous-pull',
                 'description' => 'Sous-pull',
                 'price' => 10,
                 'category' => $this->getReference('Sous-pulls'),
-                'images' => $this->getReference('Image_8'),
+                // 'images' => $this->getReference('Image_8'),
             ],
 
             [
@@ -76,7 +76,7 @@ class ProductFixture extends Fixture
                 'description' => 'Sous-pull',
                 'price' => 10,
                 'category' => $this->getReference('Sous-pulls'),
-                'images' => $this->getReference('Image_9'),
+                // 'images' => $this->getReference('Image_9'),
             ],
 
             [
@@ -84,7 +84,7 @@ class ProductFixture extends Fixture
                 'description' => 'Gilet',
                 'price' => 10,
                 'category' => $this->getReference('Gilets'),
-                'images' => $this->getReference('Image_10'),
+                // 'images' => $this->getReference('Image_10'),
             ],
 
             [
@@ -92,7 +92,7 @@ class ProductFixture extends Fixture
                 'description' => 'Gilet',
                 'price' => 10,
                 'category' => $this->getReference('Gilets'),
-                'images' => $this->getReference('Image_11'),
+                // 'images' => $this->getReference('Image_11'),
             ],
 
             [
@@ -100,7 +100,7 @@ class ProductFixture extends Fixture
                 'description' => 'Gilet',
                 'price' => 10,
                 'category' => $this->getReference('Gilets'),
-                'images' => $this->getReference('Image_12'),
+                // 'images' => $this->getReference('Image_12'),
             ],
 
             [
@@ -108,7 +108,7 @@ class ProductFixture extends Fixture
                 'description' => 'Manteau',
                 'price' => 10,
                 'category' => $this->getReference('Manteaux'),
-                'images' => $this->getReference('Image_13'),
+                // 'images' => $this->getReference('Image_13'),
             ],
 
             [
@@ -116,7 +116,7 @@ class ProductFixture extends Fixture
                 'description' => 'Manteau',
                 'price' => 10,
                 'category' => $this->getReference('Manteaux'),
-                'images' => $this->getReference('Image_14'),
+                // 'images' => $this->getReference('Image_14'),
             ],
 
             [
@@ -124,7 +124,7 @@ class ProductFixture extends Fixture
                 'description' => 'Manteau',
                 'price' => 10,
                 'category' => $this->getReference('Manteaux'),
-                'images' => $this->getReference('Image_15'),
+                // 'images' => $this->getReference('Image_15'),
             ],
 
             [
@@ -132,7 +132,7 @@ class ProductFixture extends Fixture
                 'description' => 'Veste',
                 'price' => 10,
                 'category' => $this->getReference('Vestes'),
-                'images' => $this->getReference('Image_16'),
+                // 'images' => $this->getReference('Image_16'),
             ],
 
             [
@@ -140,7 +140,7 @@ class ProductFixture extends Fixture
                 'description' => 'Veste',
                 'price' => 10,
                 'category' => $this->getReference('Vestes'),
-                'images' => $this->getReference('Image_17'),
+                // 'images' => $this->getReference('Image_17'),
             ],
 
             [
@@ -148,7 +148,7 @@ class ProductFixture extends Fixture
                 'description' => 'Veste',
                 'price' => 10,
                 'category' => $this->getReference('Vestes'),
-                'images' => $this->getReference('Image_18'),
+                // 'images' => $this->getReference('Image_18'),
             ],
 
             [
@@ -156,7 +156,7 @@ class ProductFixture extends Fixture
                 'description' => 'Jean',
                 'price' => 10,
                 'category' => $this->getReference('Jeans'),
-                'images' => $this->getReference('Image_19'),
+                // 'images' => $this->getReference('Image_19'),
             ],
 
             [
@@ -164,7 +164,7 @@ class ProductFixture extends Fixture
                 'description' => 'Jean',
                 'price' => 10,
                 'category' => $this->getReference('Jeans'),
-                'images' => $this->getReference('Image_20'),
+                // 'images' => $this->getReference('Image_20'),
             ],
 
             [
@@ -172,7 +172,7 @@ class ProductFixture extends Fixture
                 'description' => 'Jean',
                 'price' => 10,
                 'category' => $this->getReference('Jeans'),
-                'images' => $this->getReference('Image_21'),
+                // 'images' => $this->getReference('Image_21'),
             ],
 
             [
@@ -180,7 +180,7 @@ class ProductFixture extends Fixture
                 'description' => 'Pantalon',
                 'price' => 10,
                 'category' => $this->getReference('Pantalons'),
-                'images' => $this->getReference('Image_22'),
+                // 'images' => $this->getReference('Image_22'),
             ],
 
             [
@@ -188,7 +188,7 @@ class ProductFixture extends Fixture
                 'description' => 'Pantalon',
                 'price' => 10,
                 'category' => $this->getReference('Pantalons'),
-                'images' => $this->getReference('Image_23'),
+                // 'images' => $this->getReference('Image_23'),
             ],
 
             [
@@ -196,7 +196,7 @@ class ProductFixture extends Fixture
                 'description' => 'Pantalon',
                 'price' => 10,
                 'category' => $this->getReference('Pantalons'),
-                'images' => $this->getReference('Image_24'),
+                // 'images' => $this->getReference('Image_24'),
             ],
 
             [
@@ -204,7 +204,7 @@ class ProductFixture extends Fixture
                 'description' => 'Jogging',
                 'price' => 10,
                 'category' => $this->getReference('Joggings'),
-                'images' => $this->getReference('Image_25'),
+                // 'images' => $this->getReference('Image_25'),
             ],
 
             [
@@ -212,7 +212,7 @@ class ProductFixture extends Fixture
                 'description' => 'Jogging',
                 'price' => 10,
                 'category' => $this->getReference('Joggings'),
-                'images' => $this->getReference('Image_26'),
+                // 'images' => $this->getReference('Image_26'),
             ],
 
             [
@@ -220,7 +220,7 @@ class ProductFixture extends Fixture
                 'description' => 'Jogging',
                 'price' => 10,
                 'category' => $this->getReference('Joggings'),
-                'images' => $this->getReference('Image_27'),
+                // 'images' => $this->getReference('Image_27'),
             ],
 
             [
@@ -228,7 +228,7 @@ class ProductFixture extends Fixture
                 'description' => 'Chaussure',
                 'price' => 10,
                 'category' => $this->getReference('Chaussures'),
-                'images' => $this->getReference('Image_28'),
+                // 'images' => $this->getReference('Image_28'),
             ],
 
             [
@@ -236,7 +236,7 @@ class ProductFixture extends Fixture
                 'description' => 'Chaussure',
                 'price' => 10,
                 'category' => $this->getReference('Chaussures'),
-                'images' => $this->getReference('Image_29'),
+                // 'images' => $this->getReference('Image_29'),
             ],
 
             [
@@ -244,22 +244,14 @@ class ProductFixture extends Fixture
                 'description' => 'Chaussure',
                 'price' => 10,
                 'category' => $this->getReference('Chaussures'),
-                'images' => $this->getReference('Image_30'),
+                // 'images' => $this->getReference('Image_30'),
             ],
             [
                 'name' => 'Chaussette',
                 'description' => 'Chaussette',
                 'price' => 10,
                 'category' => $this->getReference('Chaussettes'),
-                'images' => $this->getReference('Image_31'),
-            ],
-
-            [
-                'name' => 'Chaussette',
-                'description' => 'Chaussette',
-                'price' => 10,
-                'category' => $this->getReference('Chaussettes'),
-                'images' => $this->getReference('Image_32'),
+                // 'images' => $this->getReference('Image_31'),
             ],
 
             [
@@ -267,7 +259,15 @@ class ProductFixture extends Fixture
                 'description' => 'Chaussette',
                 'price' => 10,
                 'category' => $this->getReference('Chaussettes'),
-                'images' => $this->getReference('Image_33'),
+                // 'images' => $this->getReference('Image_32'),
+            ],
+
+            [
+                'name' => 'Chaussette',
+                'description' => 'Chaussette',
+                'price' => 10,
+                'category' => $this->getReference('Chaussettes'),
+                // 'images' => $this->getReference('Image_33'),
             ],
 
             [
@@ -275,7 +275,7 @@ class ProductFixture extends Fixture
                 'description' => 'Sous-vêtement',
                 'price' => 10,
                 'category' => $this->getReference('Sous-vêtements'),
-                'images' => $this->getReference('Image_34'),
+                // 'images' => $this->getReference('Image_34'),
             ],
 
             [
@@ -283,7 +283,7 @@ class ProductFixture extends Fixture
                 'description' => 'Sous-vêtement',
                 'price' => 10,
                 'category' => $this->getReference('Sous-vêtements'),
-                'images' => $this->getReference('Image_35'),
+                // 'images' => $this->getReference('Image_35'),
             ],
 
             [
@@ -291,7 +291,7 @@ class ProductFixture extends Fixture
                 'description' => 'Sous-vêtement',
                 'price' => 10,
                 'category' => $this->getReference('Sous-vêtements'),
-                'images' => $this->getReference('Image_36'),
+                // 'images' => $this->getReference('Image_36'),
             ],
 
 
@@ -303,9 +303,9 @@ class ProductFixture extends Fixture
             $product->setDescription($prod['description']);
             $product->setPrix($prod['price']);
             $product->setCategorie($prod['category']);
-            $product->setImage($prod['images']);
+            // $product->setImage($prod['images']);
             $prod['category']->addAttachedProduct($product);
-            $prod['images']->setProduct($product);
+            // $prod['images']->setProduct($product);
             $manager->persist($product);
             $this->addReference("Product_".($key+1), $product);
         }

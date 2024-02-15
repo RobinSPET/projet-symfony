@@ -36,7 +36,7 @@ class Images
         return $this;
     }
 
-    public function getProduct(): ?Product
+    /*public function getProduct(): ?Product
     {
         return $this->product;
     }
@@ -56,5 +56,5 @@ class Images
         $this->product = $product;
 
         return $this;
-    }
+    }*/
 }
